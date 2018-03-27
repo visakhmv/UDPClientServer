@@ -13,7 +13,7 @@ class UDPServer {
 			System.out.println("RECEIVED: " + sentence);
 			InetAddress IPAddress = receivePacket.getAddress();
 			int port = receivePacket.getPort();
-		    sendData = sentence.getBytes();
+			sendData = sentence.getBytes();
 			DatagramPacket sendPacket =
 			new DatagramPacket(sendData, sendData.length, IPAddress, port);
 			serverSocket.send(sendPacket);
