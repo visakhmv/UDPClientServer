@@ -14,9 +14,9 @@ class UDPClient{
 		  sentence = inFromUser.readLine();
 		  sendData = sentence.getBytes();
 		  DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
-		  clientSocket.send(sendPacket);
+		  clientSocket.send(sendPacket);//sending to server
 		  DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-		  clientSocket.receive(receivePacket);
+		  clientSocket.receive(receivePacket);//receiving from server
 		  String modifiedSentence = new String(receivePacket.getData(),0, receivePacket.getLength());
 		  System.out.println("FROM SERVER:" + modifiedSentence);
       }while (!sentence.trim().equals("bye"));
